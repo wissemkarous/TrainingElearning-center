@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+
+  <style>
+    body {
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+    }
+
+    .form-container {
+      background-color: #fff;
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 8px;
+    }
+
+    input,
+    select {
+      padding: 8px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .recap-container {
+      margin-top: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+    }
+
+    .recap-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .recap-table th,
+    .recap-table td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+
+    #refresh-btn {
+      background-color: #007BFF;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    #refresh-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="form-container">
+    <h1>Registration Form</h1>
+    <form onsubmit="return validateForm()">
+      <label for="start-date">Start Date (at least 15 days from today):</label>
+      <input type="date" id="start-date" name="start-date" required>
+
+      <label for="end-date">End Date (after Start Date):</label>
+      <input type="date" id="end-date" name="end-date" required>
+
+      <label for="language">Select Language:</label>
+      <select id="language" name="language" required>
+        <option value="fr">French</option>
+        <option value="en">English</option>
+      </select>
+
+      <label for="trainer">Select Trainer:</label>
+      <select id="trainer" name="trainer" required>
+        <option value="Wissem karous">wissem karous</option>
+        <option value="Mohammed safi ">Mohammed safi</option>
+      </select>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <!-- Recap Section -->
+  <div class="recap-container" id="recap-container" style="display:none;">
+    <h2>Registration Recap</h2>
+    <table class="recap-table">
+      <tr>
+        <th>Field</th>
+        <th>Value</th>
+      </tr>
+      <tr>
+        <td>Start Date</td>
+        <td id="recap-start-date"></td>
+      </tr>
+      <tr>
+        <td>End Date</td>
+        <td id="recap-end-date"></td>
+      </tr>
+      <tr>
+        <td>Language</td>
+        <td id="recap-language"></td>
+      </tr>
+      <tr>
+        <td>Trainer</td>
+        <td id="recap-trainer"></td>
+      </tr>
+    </table>
+
+    <!-- Refresh Button -->
+    <button id="refresh-btn" onclick="refreshPage()">Refresh</button>
+  </div>
+
+  <script>
+    function validateForm() {
+      var startDate = new Date(document.getElementById("start-date").value);
+      var endDate = new Date(document.getElementById("end-date").value);
+      var today = new Date();
+      today.setDate(today.getDate() + 15); // 15 days from today
+
+      if (startDate < today) {
+        alert("Start date must be at least 15 days from today.");
+        return false;
+      }
+
+      if (endDate <= startDate) {
+        alert("End date must be after the start date.");
+        return false;
+      }
+
+      // If form is valid, display recap
+      displayRecap();
+
+      return false; // Prevents form submission for the example
+    }
+
+    function displayRecap() {
+      var startDate = document.getElementById("start-date").value;
+      var endDate = document.getElementById("end-date").value;
+      var language = document.getElementById("language").value;
+      var trainer = document.getElementById("trainer").value;
+
+      document.getElementById("recap-start-date").innerText = startDate;
+      document.getElementById("recap-end-date").innerText = endDate;
+      document.getElementById("recap-language").innerText = language;
+      document.getElementById("recap-trainer").innerText = trainer;
+
+      // Display the recap container
+      document.getElementById("recap-container").style.display = "block";
+    }
+
+    function refreshPage() {
+      location.reload();
+    }
+  </script>
+
+</body>
+
+</html>

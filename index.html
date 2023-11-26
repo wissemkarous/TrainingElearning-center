@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" type="png" href="images/icon/favicon.png">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Comaptible" content="IE=edge">
+	<title>LearnEd</title>
+	<meta name="desciption" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="script.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	<script>
+		$(window).on('scroll', function(){
+  			if($(window).scrollTop()){
+  			  $('nav').addClass('black');
+ 			 }else {
+ 		   $('nav').removeClass('black');
+ 		 }
+		})
+	</script>
+</head>
+<body>
+<!-- Navigation Bar -->
+	<header id="header">
+		<nav>
+			<div class="logo"><img src="images/icon/logo.png" alt="logo"></div>
+			<ul>
+				<li><a href="#about_section">About</a></li>
+				<li><a href="#portfolio_section">Portfolio</a></li>
+				<li><a href="#services_section">Services</a></li>
+				
+			</ul>
+			<a class="get-started" href="login.html">Get Started</a>
+			<img src="images/icon/menu.png" class="menu" onclick="sideMenu(0)" alt="menu">
+		
+		</nav>
+		<div class="head-container">
+			<div class="quote">
+				<p>The beautiful thing about learning is that nobody can take it away from you</p>
+				<h5>Education is the process of facilitating learning, or the acquisition of knowledge, skills, values, beliefs, and habits. Educational methods include teaching, training, storytelling, discussion and directed research!</h5>
+			
+			</div>
+			<div class="svg-image">
+				<img src="images/extra/svg1.jpg" alt="svg">
+			</div>
+		</div>
+		<div class="side-menu" id="side-menu">
+			<div class="close" onclick="sideMenu(1)"><img src="images/icon/close.png" alt=""></div>
+			<div class="user">
+				<img src="images/creator/roshan.jpeg" alt="Username">
+				<p>roshank9419</p>
+			</div>
+			<ul>
+				<li><a href="#about_section">About</a></li>
+				<li><a href="#portfolio_section">Portfolio</a></li>
+				<li><a href="#services_section">Services</a></li>
+				
+			</ul>
+		</div>
+	</header>
+
+	
+<!-- ABOUT -->
+	<div class="diffSection" id="about_section">
+		<center><p style="font-size: 50px; padding: 100px">About</p></center>
+		<div class="about-content">
+				<div class="side-image">
+					<img class="sideImage" src="images/extra/e3.jpg">
+				</div>
+				<div class="side-text">
+					<h2>What you think about us ?</h2>
+					<p>Education is the process of facilitating learning, or the acquisition of knowledge, skills, values, beliefs, and habits. Educational methods include teaching, training, storytelling, discussion and directed research.<br> Educational website can include websites that have games, videos or topic related resources that act as tools to enhance learning and supplement classroom teaching. These websites help make the process of learning entertaining and attractive to the student, especially in today's age. <br>Using HTML(HyperText Markup Language), CSS(Cascading Style Sheet), JavaScript, we can make learning more easier and in a interesting way.</p>
+				</div>
+		</div>
+	</div>
+
+
+<!-- PORTFOLIO -->
+	<div class="diffSection" id="portfolio_section">
+		<center><p style="font-size: 50px; padding: 100px; padding-bottom: 40px;">Portfolio</p></center>
+		<div class="content">
+			<p>
+				“Education is the passport to the future, for tomorrow belongs to those who prepare for it today.” “Your attitude, not your aptitude, will determine your altitude.” “If you think education is expensive, try ignorance.” “The only person who is educated is the one who has learned how to learn …and change.”
+			</p>
+		</div>
+	</div>
+	<div class="extra">
+		<p>We're increasing this data every year</p>
+		<div class="smbox">
+		<span><center><div class="data">154</div><div class="det">Enrolled Students</div></center></span>
+		<span><center><div class="data">62</div><div class="det">Total Courses</div></center></span>
+		<span><center><div class="data">56</div><div class="det">Placed Students</div></center></span>
+		<span><center><div class="data">27</div><div class="det">Total Projects</div></center></span>
+		</div>
+	</div>
+
+
+
+
+
+<!-- SERVICES -->
+	<div class="service-swipe">
+		<div class="diffSection" id="services_section">
+		<center><p style="font-size: 50px; padding: 100px; padding-bottom: 40px; color: #fff;">Services</p></center>
+		</div>
+		<a href="subjects/CyberSecurity.html"><div class="s-card"><img src="images/icon/computer-courses.png"><p>Online CyberSecurity Courses</p></div></a>
+		<a href="subjects/Machinelearning.html"><div class="s-card"><img src="https://builtin.com/sites/www.builtin.com/files/styles/og/public/2022-07/future-artificial-intelligence.png"><p>Machine Learning </p></div></a>
+		<a href="subjects/webdevelopement.html"><div class="s-card"><img src="https://dynomapper.com/images/5_tips_for_creating_a_great_website.jpg"><p>Web Development</p></div></a>
+		
+		
+	</div>
+
+<!-- FOOTER -->
+	<footer>
+		<div class="footer-container">
+			<div class="left-col">
+				<img src="images/icon/logo - Copy.png" style="width: 200px;">
+				<div class="logo"></div>
+				<div class="social-media">
+					<a href="#"><img src="images/icon\fb.png"></a>
+					<a href="#"><img src="images/icon\insta.png"></a>
+					<a href="#"><img src="images/icon\tt.png"></a>
+					<a href="#"><img src="images/icon\ytube.png"></a>
+					<a href="#"><img src="images/icon\linkedin.png"></a>
+				</div><br><br>
+				<p class="rights-text">Copyright © 2023 Created By wissem karous .</p>
+				<br><p><img src="images/icon/location.png"> Enet'Com University<br>Tunisia,Sfax</p><br>
+				<p><img src="images/icon/phone.png"> 95 091 452<br><img src="images/icon/mail.png">&nbsp; wissemkar203@gmail.com</p>
+			</div>
+			<div class="right-col">
+				<h1 style="color: #fff">Our Newsletter</h1>
+				<div class="border"></div><br>
+				<p>Enter Your Email to get our News and updates.</p>
+				<form class="newsletter-form">
+					<input class="txtb" type="email" placeholder="Enter Your Email">
+					<input class="btn" type="submit" value="Submit">
+				</form>
+			</div>
+		</div>
+	</footer>
+
+</body>
+</html>
